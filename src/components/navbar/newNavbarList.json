@@ -1,0 +1,34 @@
+{
+  "menuList": [
+    {
+      "pathName": "Home",
+      "url": "/"
+    },
+    {
+      "pathName": "About",
+      "url": "/about",
+      "children": [
+        {
+          "pathName": "Instalasi",
+          "url": "/paket"
+        },
+        {
+          "pathName": "Fogging Disenfektan",
+          "url": "/webinar"
+        }
+      ]
+    },
+    {
+      "pathName": "Booking",
+      "url": "/paket"
+    },
+    {
+      "pathName": "Contact",
+      "url": "/contact"
+    },
+    {
+      "pathName": "Blog",
+      "url": "/article"
+    }
+  ]
+}

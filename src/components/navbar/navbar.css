@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navbar {
+    @apply flex justify-between items-center h-[100px] max-w-[1400px] mx-auto px-4;
+    position: relative;
+    z-index: 100;
+  }
+
+  .logo {
+    @apply w-52;
+  }
+
+  .listnav {
+    @apply hidden md:flex;
+  }
+
+  .teksnav {
+    @apply pt-6 pl-6 pr-16 font-bold;
+  }
+
+  .teksnav1 {
+    @apply flex pl-0 pt-6 px-6 mx-10 font-bold text-lg hover:text-[#074288] active:text-[#074288] items-center justify-center;
+  }
+
+  .nav {
+    @apply fixed left-0 top-0 w-[70%] h-full md:hidden border-r border-r-gray-900 bg-[#074288] text-white ease-in-out duration-500;
+  }
+
+  .teksnav2 {
+    @apply pt-6 pr-14 font-bold;
+  }
+
+  .teksnav3 {
+    @apply pt-6 pl-6 font-bold;
+  }
+
+  .teksnav4 {
+    @apply pt-6 pl-16 font-bold;
+  }
+
+  .buttonmasuk {
+    @apply bg-[#002157] hover:bg-[#286cdb] text-white font-bold py-4 px-10 ml-[200px] rounded;
+  }
+}
