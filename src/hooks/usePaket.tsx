@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Paket } from "../@types/Paket";
 import { HTTPAruna } from "../services/handlerApi";
-import { HTTPAruna } from "../services/handlerApi";
 
 function usePaket() {
   const [paket, setPaket] = useState<Paket[]>();
