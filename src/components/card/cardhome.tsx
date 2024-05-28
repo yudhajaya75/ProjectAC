@@ -24,7 +24,7 @@ const Consultation = () => {
         <div className="mt-10 xl:mt-[100px] ">
           <div className="p-4 w-[400px] text-center mx-auto ">
             <h3 className="text-2xl lg:text-3xl font-semibold text-[#002157] ">
-              Kenapa harus konsultasi di Konseling Satir
+              Kenapa harus konsultasi di PowerIndo
             </h3>
           </div>
           <div className="grid mt-20 md:grid-cols-3 gap-5 px-5 lg:px-24">
@@ -33,17 +33,17 @@ const Consultation = () => {
             ) : (
               cardhome.map((res, index: number) => (
                 <div key={index}>
-                  <div className="h-[400px] shadow-lg rounded-md">
+                  <div className="h-auto shadow-lg rounded-md">
                     <Image
                       src={res?.attributes?.image?.data?.attributes?.url}
                       alt=""
                       customClass="w-full h-[180px]"
                     />
                     <div className="w-full p-6">
-                      <h3 className="text-xl mb-[15px]">
+                      <h3 className="text-xl font-bold mb-[15px]">
                         {res.attributes.title}.
                       </h3>
-                      <p className="text-lg text-start">
+                      <p className="text-sm text-start text-[#808080]">
                         {res.attributes.desc}
                       </p>
                     </div>

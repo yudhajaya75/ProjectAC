@@ -45,8 +45,8 @@ const Mobile = () => {
               subtitle={res.attributes.title}
               bio={res.attributes.body}
               image={`${res.attributes.image.data.attributes.url}`}
-              link1={res.attributes.medsos_1}
-              link2={res.attributes.medsos_2}
+              medsos1={res.attributes.medsos1}
+              medsos2={res.attributes.medsos2}
             />
           ))
         )}

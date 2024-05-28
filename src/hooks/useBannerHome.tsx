@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-function useBanAbout() {
-  const [content, setContent] = useState<any>();
+function useBannerHome() {
+  const [banner, setBanner] = useState<any>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/about?populate=*`, {
+    fetch(`${process.env.REACT_APP_API_URL}/banner-homes?populate=*`, {
       method: "GET",
       headers: {
         Authorization: "bearer " + process.env.REACT_APP_ADMIN_TOKEN,
@@ -15,15 +15,15 @@ function useBanAbout() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setContent(data.data);
+        setBanner(data.data[0]);
         setTimeout(() => setLoading(false), 500);
       });
   }, []);
 
   return {
-    content,
+    banner,
     loading,
   };
 }
 
-export default useBanAbout;
+export default useBannerHome;

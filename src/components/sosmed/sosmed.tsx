@@ -7,16 +7,16 @@ interface SocialMediaProfileProps {
   subtitle: string;
   bio: string;
   image: string;
-  link1: string;
-  link2: string;
+  medsos1: string;
+  medsos2: string;
 }
 
 const SocialMediaProfile: React.FC<SocialMediaProfileProps> = ({
   name,
   subtitle,
   bio,
-  link1,
-  link2,
+  medsos1,
+  medsos2,
   image,
 }) => {
   return (
@@ -32,6 +32,10 @@ const SocialMediaProfile: React.FC<SocialMediaProfileProps> = ({
           <h1 className="text-lg font-semibold">{name}</h1>
           <p className="text-sm text-gray-600 text-left my-4">{subtitle}</p>
           <p className="text-sm text-gray-600 text-justify">{bio}</p>
+        </div>
+        <div className="flex items-center justify-center gap-10">
+          <p className="text-sm text-gray-600 text-justify">{medsos1}</p>
+          <p className="text-sm text-gray-600 text-justify">{medsos2}</p>
         </div>
       </div>
     </div>

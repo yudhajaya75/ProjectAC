@@ -2,13 +2,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import { Autoplay } from "swiper";
 import Skeleton from "@mui/material/Skeleton";
-import useBanHome from "../../hooks/useBanHome";
+import useBannerHome from "../../hooks/useBannerHome";
 
 const Registration = () => {
-  const { banner, sliderhome, loading } = useBanHome();
+  const { banner, loading } = useBannerHome();
 
   if (!banner && !banner) return <div>No data</div>;
-  if (!sliderhome && !sliderhome) return <div>No data</div>;
 
   return (
     <div>
@@ -18,47 +17,12 @@ const Registration = () => {
         </div>
       ) : (
         <div>
-          <div className="md:w-full md:h-[250px] xl:w-[500px] relative lg:left-[60%] lg:top-[15%]">
-            <Swiper
-              spaceBetween={30}
-              centeredSlides={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Autoplay]}
-              className="mySwiper"
-            >
-              {sliderhome.map((res) => (
-                <SwiperSlide key={res.id}>
-                  <div className="relative lg:left-[40px] lg:top-[60px] sm-440:ml-[240px] lg:pt-0 sm-440:pt-[80px] sm-440:top-[0px] sm-440:bg-cover sm:ml-[500px] md:ml-[550px] lg:block lg:ml-0 lg:w-[400px] lg:h-[500px] rounded">
-                    <img
-                      src={`${process.env.REACT_APP_UPLOAD_URL}${res.attributes.image.data.attributes.url}`}
-                      alt="background-people"
-                      className="w-full lg:h-[400px] lg:w-[400px] sm-440:w-[180px] sm-440:h-[180px]"
-                      style={{ borderRadius: "10%" }}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <div>
-              <img
-                className="absolute -z-10 right-0 lg:top-[10px] sm-440:top-[-20px] sm-440:w-[200px] sm-440:hidden sm:hidden md:hidden lg:block lg:w-[500px] lg:h-[500px]"
-                src="./images/bgpeople.webp"
-                alt="background-people"
-              />
-            </div>
-          </div>
           <div className="mt-20 ">
             <div>
               {banner && (
                 <img
                   className="w-full h-[500px] lg:h-[800px] absolute -top-10 -z-30"
-                  src={`${process.env.REACT_APP_UPLOAD_URL}${banner?.attributes?.image?.data?.attributes?.url}`}
+                  src={`${process.env.REACT_APP_UPLOAD_URL}${banner?.attributes.banner.data[0].attributes.url}`}
                   alt="backgroundS"
                 />
               )}

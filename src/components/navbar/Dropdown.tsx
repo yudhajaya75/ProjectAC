@@ -56,7 +56,7 @@ const Dropdown = ({ menu, parentMenu, parentLink }: Props) => {
       <div
         className={`${
           active ? "absolute" : "hidden"
-        } top-[72px] lg:w-56 bg-white z-[9999] py-8 px-6 grid gap-2 transition-all duration-150 shadow-md rounded-md`}
+        } top-[85px] lg:w-[200px] bg-white z-[9999] py-3 px-5 grid gap-2 transition-all duration-150 shadow-md rounded-md`}
       >
         {menu.map((value, index) => (
           <Link

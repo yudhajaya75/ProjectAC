@@ -37,7 +37,7 @@ const NewNavbar = () => {
             alt="Logo AC"
             src="/images/Logo.png"
             isExternal
-            customClass="max-h-[60px] w-[300px]"
+            customClass="max-h-[80px] w-[130px]"
           />
         </Link>
         <div className="md:hidden cursor-pointer">

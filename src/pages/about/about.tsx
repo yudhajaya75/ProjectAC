@@ -10,22 +10,24 @@ import LayoutWithBanner from "../../layouts/LayoutWithBanner";
 import useBanAbout from "../../hooks/useBanAbout";
 import Heading from "../../components/global/Heading";
 import Image from "../../components/global/Image";
+import ReviewCardAbout from "../../components/card/review-card-about";
 
 const About = (props: { email: string }) => {
   const { content } = useBanAbout();
 
-  if (!content) return <div>No Data</div>;
+  if (!content || !content.attributes) return <div>No Data</div>;
+
   return (
     <LayoutWithBanner
-      bgImage={`${process.env.REACT_APP_UPLOAD_URL}${content?.attributes.image.data.attributes.url}`}
+      bgImage={`${process.env.REACT_APP_UPLOAD_URL}${content.attributes.image.data.attributes.url}`}
       accountEmail={props.email}
       firstElement={
         <>
           <h1 className="text-5xl font-bold text-[#002157]">
-            {content.attributes.header && content.attributes.header}
+            {content.attributes.header}
           </h1>
           <p className="font-extralight text-4xl text-[#5B5B5B]">
-            {content.attributes.desc && content.attributes.desc}
+            {content.attributes.desc}
           </p>
         </>
       }
@@ -43,9 +45,7 @@ const About = (props: { email: string }) => {
       <Heading customClass="mb-16">Join Layanan kami yuk! Cek disini</Heading>
       <Card />
       <Teks2 />
-      <div className="flex justify-center items-center mr-[10px]">
-        <Founding />
-      </div>
+      <ReviewCardAbout />
       <div>
         <Tesk3 />
         <Compslid />

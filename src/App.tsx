@@ -1,18 +1,31 @@
+// import Login from "./pages/login/login";
+// import Daftar from "./pages/signup/signup";
+// import Profile from "./pages/profile/profile";
+// import Logout from "./pages/profile/Logout";
+{
+  /* <Route path="/login" Component={() => <Login setEmail={setEmail} />} /> */
+}
+{
+  /* <Route path="/signup" element={<Daftar />} /> */
+}
+{
+  /* <Route path="/profile" element={<Profile email={email} />} /> */
+}
+{
+  /* <Route path="/logout" element={<Logout />} /> */
+}
+
 import { Routes, Route, Navigate } from "react-router-dom";
 import useGetUserData from "./hooks/useGetUserData";
 
 import Home from "./pages/home/home";
-import Login from "./pages/login/login";
-import Daftar from "./pages/signup/signup";
 import Webinar from "./pages/webminar/webinar";
 import Pelatihan from "./pages/pelatihan/pelatihan";
 import Konsultasi from "./pages/konsultasi/konsultasi";
 import About from "./pages/about/about";
 import Payment from "./pages/payment/payment";
-import Profile from "./pages/profile/profile";
 import Contactus from "./pages/contactus/contactus";
 import Paket from "./pages/paket/paket";
-import Logout from "./pages/profile/Logout";
 import Product from "./pages/detail/Product";
 import ArticlePage from "./pages/article/Article";
 import ArticleDetail from "./pages/article/ArticleDetail";
@@ -27,8 +40,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home email={email} />} />
-        <Route path="/login" Component={() => <Login setEmail={setEmail} />} />
-        <Route path="/signup" element={<Daftar />} />
+        <Route path="/article" element={<ArticlePage />} />
         <Route path="/home" element={<Home email={email} />} />
         <Route path="/konseling" element={<Konseling email={email} />} />
         <Route path="/webinar" element={<Webinar email={email} />} />
@@ -41,8 +53,6 @@ function App() {
             isLoggedIn ? <Payment email={email} /> : <Navigate to="/login" />
           }
         />
-        <Route path="/profile" element={<Profile email={email} />} />
-        <Route path="/article" element={<ArticlePage />} />
         <Route path="/konseling" element={<Konseling email={email} />} />
         <Route path="/article/popular" element={<Filtered type="Popular" />} />
         <Route path="/article/newest" element={<Filtered type="Newest" />} />
@@ -56,7 +66,6 @@ function App() {
         <Route path="/webinar/:slug" element={<Product type="Webinar" />} />
         <Route path="/contact" element={<Contactus email={email} />} />
         <Route path="/paket" element={<Paket email={email} />} />
-        <Route path="/logout" element={<Logout />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
       </Routes>
     </>

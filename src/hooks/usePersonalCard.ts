@@ -15,6 +15,7 @@ const usePersonalCard = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setPersonalCard(data.data);
         setTimeout(() => setLoading(false), 500);
       })

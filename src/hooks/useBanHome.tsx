@@ -4,7 +4,7 @@ import { BannerHome } from "../@types/BannerHome";
 
 function useBanHome() {
   const [sliderhome, setSliderHome] = useState<GalleryBanner[] | null>(null);
-  const [banner, setBanner] = useState<BannerHome | null>(null);
+  const [banner, setBanner] = useState<BannerHome[] | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
